@@ -1,13 +1,20 @@
 name: sast-scan
 uses: AppThreat/sast-scan-action@1.0.2
 with:
+  output: reports
   type: "Node.js"
 
 on: 
  push:
-    branches:[master, ]
-  pull_request:
-    branches:[master]
+    branches: [master, ]
+ pull_request:
+    branches: [master]
 
+-uses: AppThreat/sast-scan-action@master
+ with:
+   type: "Node.js"
 
-    
+-uses: actions/upload-artifact@v1
+ with:
+   name: reports
+   path: reports
