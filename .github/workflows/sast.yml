@@ -1,12 +1,11 @@
-- name: sast-scan
-  uses: AppThreat/sast-scan-action@1.0.2
-  with:
-    type: "Node.js"
+name: sast-scan
+uses: AppThreat/sast-scan-action@1.0.2
+ with:
+  type: "Node.js"
 
-# Run this workflow every time a new commit pushed to repository
 on: 
-  push:
-    branches:[master]
+ push:
+    branches:[master, ]
   pull_request:
     branches:[master]
 
